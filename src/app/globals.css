@@ -1,26 +1,121 @@
-@import "tailwindcss";
-
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
+@import 'tailwindcss';
 
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+  margin: 0; /* tránh dư khoảng trắng */
+  padding: 0;
+}
+
+.page-container {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(90deg, #ff512f0f, #dd4f24ba);
+  padding: 1rem; /* thêm padding để nội dung không dính sát */
+  box-sizing: border-box;
+}
+
+.page-container.dark {
+  background: linear-gradient(90deg, #2c3e50, #34495e70);
+}
+
+.gradient-text {
+  background: linear-gradient(90deg, #ff512f, #24addd);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  padding: 10px 0;
+  text-align: center;
+  font-size: 2rem;
+}
+
+.container-button-tab {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.container-catList {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  padding-top: 20px;
+}
+
+.refresh-cats {
+  cursor: pointer;
+  background: antiquewhite;
+  padding: 12px 20px;
+  border-radius: 12px;
+  font-size: 18px;
+  font-weight: bold;
+  animation: jump infinite 2s;
+  margin-bottom: 1rem;
+  margin: 10px;
+}
+
+@keyframes jump {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(15px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.item {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.item img {
+  object-fit: cover;
+  border-radius: 10px;
+  width: 300px;
+  height: 300px;
+}
+
+.button {
+  margin-top: 15px;
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.like-button {
+  cursor: pointer;
+  background: antiquewhite;
+  padding: 10px 16px;
+  border-radius: 10px;
+  font-size: 16px;
+  font-family: cursive;
+  width: auto;
+  min-width: 100px;
+  text-align: center;
+}
+
+.score {
+  font-size: 18px;
+  font-weight: 500;
+  text-align: center;
+}
+.my-tab {
+  padding-top: 30px;
+  font-size: 22px;
+  font-family: -webkit-body;
 }

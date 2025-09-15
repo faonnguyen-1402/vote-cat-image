@@ -1,0 +1,41 @@
+.toggle-container {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  gap: 10px;
+  font-family: sans-serif;
+}
+
+.toggle-btn {
+  width: 80px;
+  height: 40px;
+  background: linear-gradient(90deg, #e59f25, #e0f7fa);
+  border-radius: 50px;
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  position: relative;
+  transition: background 0.3s ease;
+}
+
+.toggle-btn.dark {
+  background: linear-gradient(90deg, #2c3e50, #34495e70);
+}
+
+.icon {
+  width: 30px;
+  height: 30px;
+  background: white;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+  position: absolute;
+  left: 5px;
+  transition: left 0.3s ease;
+}
+
+.toggle-btn.dark .icon {
+  left: 45px;
+}

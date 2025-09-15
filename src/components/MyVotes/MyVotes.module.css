@@ -1,0 +1,34 @@
+.container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  padding: 20px;
+}
+
+.item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #f9f9f991;
+  border-radius: 12px;
+  padding: 10px;
+  box-shadow: 0 4px 10px rgb(0 0 0);
+  transition: transform 0.3s ease;
+}
+
+.item:hover {
+  transform: scale(1.05);
+}
+
+.image {
+  object-fit: cover;
+  border-radius: 12px;
+  width: 300px;
+  height: 300px;
+}
+.votes-text {
+  margin-top: 10px;
+  font-size: large;
+  font-weight: 700;
+  font-family: cursive;
+}
