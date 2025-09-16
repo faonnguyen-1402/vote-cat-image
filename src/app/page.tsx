@@ -70,11 +70,14 @@ export default function Home() {
         }
       );
       const data: Vote[] = await res.json();
-      const users: Record<string, number> = {};
-      data.forEach((item) => {
-        users[item.image_id] = (users[item.image_id] || 0) + item.value;
+      setVotes((prev) => {
+        const users: Record<string, number> = { ...prev };
+        data.forEach((item) => {
+          users[item.image_id] = item.value;
+        });
+        return users;
       });
-      setVotes(users);
+      
       setMyVotes(data);
     } catch (error) {
       console.error('super err', error);
@@ -85,13 +88,15 @@ export default function Home() {
   const handleVotes = async (imageId: string, value: number) => {
     try {
       if (isActiveItems[imageId]) return;
+
       setActiveItems((prev) => ({
         ...prev,
         [imageId]: true,
       }));
+
       setVotes((prev) => ({
         ...prev,
-        [imageId]: (prev[imageId] || 0) + value,
+        [imageId]: value,
       }));
 
       const res = await fetch('https://api.thecatapi.com/v1/votes', {
@@ -108,9 +113,11 @@ export default function Home() {
       });
 
       if (!res.ok) throw new Error(await res.text());
+
       if (subId) fetchVotes(subId);
-      console.log('object', myVotes);
-    } catch (error) {}
+    } catch (error) {
+      console.error(error);
+    }
   };
 
   const handleChangeTab = () => {

@@ -119,8 +119,9 @@ body {
   width: auto;
   min-width: 90px;
   text-align: center;
+  transition: transform 2s ease;
 }
-
+ 
 .score {
   font-size: 18px;
   font-weight: 500;
