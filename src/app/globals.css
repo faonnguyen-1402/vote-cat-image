@@ -104,6 +104,11 @@ body {
   gap: 0.75rem;
 }
 
+.highlight-vote-button {
+  transform: scale(1.2);
+  box-shadow: 0 8px 18px rgb(197 147 34);
+}
+
 .like-button {
   cursor: pointer;
   background: antiquewhite;
@@ -140,7 +145,7 @@ body {
   .like-button {
     cursor: pointer;
     background: antiquewhite;
-    padding: 10px 15px;
+    padding: 10px 0px;
     border-radius: 10px;
     font-size: 14px;
     font-family: cursive;

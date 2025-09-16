@@ -93,6 +93,7 @@ export default function Home() {
         ...prev,
         [imageId]: (prev[imageId] || 0) + value,
       }));
+
       const res = await fetch('https://api.thecatapi.com/v1/votes', {
         method: 'POST',
         headers: {
@@ -155,14 +156,17 @@ export default function Home() {
                 <div className='button'>
                   <button
                     onClick={() => handleVotes(item.id, 1)}
-                    className='like-button'
+                    className={`like-button ${
+                      votes[item.id] === 1 ? 'highlight-vote-button' : ''
+                    }`}
                   >
                     Like 🥰
                   </button>
-                  <h1 className='score'>{votes[item.id] ?? 0}</h1>
                   <button
                     onClick={() => handleVotes(item.id, -1)}
-                    className='like-button'
+                    className={`like-button ${
+                      votes[item.id] === -1 ? 'highlight-vote-button' : ''
+                    }`}
                   >
                     Dislike 👎
                   </button>
