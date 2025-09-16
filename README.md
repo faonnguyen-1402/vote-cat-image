@@ -7,7 +7,7 @@ Users can browse random cat images, vote them Up/Down, and track their own votes
 Getting Started
 
 1. Clone repo & install dependencies
-   git clone https://github.com/your-username/cat-voting-app.git
+   git clone https://github.com/faonnguyen-1402/vote-cat-image.git
    cd cat-voting-app
    npm install
 
