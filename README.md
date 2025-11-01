@@ -4,6 +4,10 @@ A simple cat voting app built with Next.js + TypeScript + Tailwind CSS, powered 
 .
 Users can browse random cat images, vote them Up/Down, and track their own votes with a persistent identity.
 
+## 🚀 Live Demo
+
+👉 [https://vote-cat-image-utfi.vercel.app/](https://vote-cat-image-utfi.vercel.app/)
+
 Getting Started
 
 1. Clone repo & install dependencies
